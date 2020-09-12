@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Kezdőlap</router-link>|
+      <router-link to="/portfolio">Portfóliók</router-link>
+      <div class="jobb">
+        <router-link to="/sign">Mutasd meg magad!</router-link>
+      </div>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -13,20 +16,25 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  text-align: left;
+  color: black;
 }
-
+.center {
+  text-align: center;
+}
 #nav {
   padding: 30px;
 }
 
 #nav a {
-  font-weight: bold;
   color: #2c3e50;
+  margin: 10px;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: grey;
+}
+.jobb {
+  float: right;
 }
 </style>
