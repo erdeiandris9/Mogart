@@ -1,18 +1,8 @@
 <template>
   <div class>
-    <div id="nav">
-      <router-link to="/">Kezdőlap</router-link>|
-      <router-link to="/alkotok">Alkotók</router-link>|
-      <router-link to="/alkotok">Művek</router-link>|
-      <router-link to="/alkotok">Kedvencek</router-link>
-
-      <div class="jobb">
-        <router-link to="/sign">Regisztráció</router-link>|
-        <router-link to="/sign">Bejelentkezés</router-link>|
-        <router-link to="/sign">Mutasd meg magad!</router-link>
-      </div>
-    </div>
-    <div class="container text-center">
+    <Nav />
+    <h1 class="text-center text-monospace">Alkotók</h1>
+    <div class="text-center d-flex justify-content-center">
       <div class="row">
         <div class="col">
           <div class="card" style>
@@ -49,6 +39,15 @@
     </div>
   </div>
 </template>
+<script>
+import Nav from "../components/Nav";
+
+export default {
+  components: {
+    Nav,
+  },
+};
+</script>
 <style>
 img {
   height: 50%;
@@ -65,7 +64,10 @@ img {
   width: 100%;
 }
 .col {
-  margin: 0%;
+  margin: 1% 8% 1% 8%;
+}
+.row {
+  width: 100%;
 }
 </style>
 

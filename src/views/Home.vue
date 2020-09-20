@@ -1,17 +1,6 @@
 <template>
   <div class="meret">
-    <div id="nav">
-      <router-link to="/">Kezdőlap</router-link>|
-      <router-link to="/alkotok">Alkotók</router-link>|
-      <router-link to="/alkotok">Művek</router-link>|
-      <router-link to="/alkotok">Kedvencek</router-link>
-
-      <div class="jobb">
-        <router-link to="/sign">Regisztráció</router-link>|
-        <router-link to="/sign">Bejelentkezés</router-link>|
-        <router-link to="/sign">Mutasd meg magad!</router-link>
-      </div>
-    </div>
+    <Nav />
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -78,12 +67,16 @@ img {
 }
 .carousel-inner {
   width: 100% !important;
-  max-height: 54rem !important ;
+  max-height: 62rem !important ;
   min-height: 400px;
 }
 </style>
 <script>
+import Nav from "../components/Nav";
+
 export default {
-  components: {},
+  components: {
+    Nav,
+  },
 };
 </script>

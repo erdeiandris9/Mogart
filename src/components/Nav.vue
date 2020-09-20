@@ -2,7 +2,7 @@
   <div>
     <div id="nav">
       <router-link to="/">Kezdőlap</router-link>|
-      <router-link to="/portfolio">Alkotók</router-link>|
+      <router-link :to="{name: 'Alkotok'}">Alkotók</router-link>|
       <router-link to="/portfolio">Művek</router-link>|
       <router-link to="/portfolio">Kedvencek</router-link>
 
