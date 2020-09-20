@@ -1,12 +1,7 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Kezdőlap</router-link>|
-      <router-link to="/portfolio">Portfóliók</router-link>
-      <div class="jobb">
-        <router-link to="/sign">Mutasd meg magad!</router-link>
-      </div>
-    </div>
+    <div class="banner text-center font">MOGART</div>
+
     <router-view />
   </div>
 </template>
@@ -36,5 +31,8 @@
 }
 .jobb {
   float: right;
+}
+.font {
+  font-size: 100px;
 }
 </style>
