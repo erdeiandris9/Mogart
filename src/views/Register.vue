@@ -9,142 +9,159 @@
         <div class="card-body text-center">
           <form class="form-horizontal">
             <div class="row">
-              <div class="col">
-                <label class="col-4 control-label text-center">
-                  <span class="textformat input-group-text text-center"
-                    >Email</span
-                  >
+              <div class="col-3">
+                <label class="control-label text-center">
+                  <span class="">Email</span>
                 </label>
               </div>
-              <div class="col-6">
+              <div class="col-8">
                 <input
                   type="email"
-                  class="form-control"
+                  class="mb-2 mr-sm-2"
                   placeholder
                   v-model="felhasznalo.email"
-                  style="width: 500px"
                 />
               </div>
             </div>
 
             <div class="row">
-              <div class="col">
-                <span class="input-group-text">Vezeték és keresztnév </span>
+              <div class="col-3">
+                <span class="">Vezeték és keresztnév </span>
               </div>
-              <div class="col col-lg-1">
+              <div class="col-4">
                 <input
-                  class="form-control"
+                  class="mb-2 mr-sm-2"
                   placeholder
                   v-model="felhasznalo.vezetekNev"
+                  size="150"
                 />
               </div>
-              <div class="col">
+              <div class="col-4">
                 <input
-                  class="form-control"
+                  class="mb-2 mr-sm-2"
                   type="text"
                   placeholder
                   v-model="felhasznalo.keresztNev"
                 />
               </div>
             </div>
-
-            <div class>
-              <label class="col-sm-10 control-label text-center">
-                <span class="textformat">Jelszó</span>
-              </label>
-              <div class>
-                <input
-                  type="password"
-                  class="form-control"
-                  placeholder
-                  v-model="password"
-                  @input="
-                    checkNumber(), checkUpperCase(), checkChar(), checkLength()
-                  "
-                />
-                <div v-if="passwordWidth != ''">
-                  <br />
-                  <div class="progress">
-                    <div
-                      class="progress-bar bg-dark"
-                      role="progressbar"
-                      aria-valuenow="0"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                      :style="{ width: passwordWidth + '%' }"
-                    >
-                      {{ passwordWidth + "%" }}
+            <div class="row">
+              <div class="col-3">
+                <label class="col-sm-10 control-label text-center">
+                  <span class="">Jelszó</span>
+                </label>
+              </div>
+              <div class="col-8">
+                <div class>
+                  <div class>
+                    <input
+                      type="password"
+                      class="mb-2 mr-sm-2"
+                      placeholder
+                      v-model="password"
+                      @input="
+                        checkNumber(),
+                          checkUpperCase(),
+                          checkChar(),
+                          checkLength()
+                      "
+                    />
+                    <div v-if="passwordWidth != ''">
+                      <br />
+                      <div class="progress">
+                        <div
+                          class="progress-bar bg-dark"
+                          role="progressbar"
+                          aria-valuenow="0"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                          :style="{ width: passwordWidth + '%' }"
+                        >
+                          {{ passwordWidth + "%" }}
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div v-if="containsChar">
+                        <img src="../assets/check.jpg" width="15px" /> Kisbetű
+                      </div>
+                      <div v-if="containsUpperCase">
+                        <img src="../assets/check.jpg" width="15px" /> Nagybetű
+                      </div>
+                      <div v-if="containsNumber">
+                        <img src="../assets/check.jpg" width="15px" /> Szám
+                      </div>
+                      <div v-if="lengthCheck">
+                        <img src="../assets/check.jpg" width="15px" /> Legalább
+                        8 karakter
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div v-if="containsChar">
-                    <img src="../assets/check.jpg" width="15px" /> Kisbetű
-                  </div>
-                  <div v-if="containsUpperCase">
-                    <img src="../assets/check.jpg" width="15px" /> Nagybetű
-                  </div>
-                  <div v-if="containsNumber">
-                    <img src="../assets/check.jpg" width="15px" /> Szám
-                  </div>
-                  <div v-if="lengthCheck">
-                    <img src="../assets/check.jpg" width="15px" /> Legalább 8
-                    karakter
-                  </div>
-                </div>
               </div>
             </div>
-
-            <div class>
-              <label class="col-sm-10 control-label text-center">
-                <span class="textformat">Jelszó újra</span>
-              </label>
-              <div class>
-                <input type="password" class="form-control" placeholder />
+            <div class="row">
+              <div class="col-3">
+                <label class="col-sm-10 control-label text-center">
+                  <span class="textformat">Jelszó újra</span>
+                </label>
+              </div>
+              <div class="col-8">
+                <input type="password" class="mb-2 mr-sm-2" placeholder />
               </div>
             </div>
-            <div class>
-              <label class="col-sm-10 control-label text-center">
-                <span class="textformat">Telefonszám</span>
-              </label>
-              <div class>
+            <div class="row">
+              <div class="col-3">
+                <label class="col-sm-10 control-label text-center">
+                  <span class="textformat">Telefonszám</span>
+                </label>
+              </div>
+              <div class="col-8">
                 <input
                   type="email"
-                  class="form-control"
+                  class="mb-2 mr-sm-2"
                   placeholder
                   v-model="felhasznalo.telefonszam"
                 />
               </div>
             </div>
-            <div class="input-group">
-              <div class="input-group-prepand">
-                <span class="input-group-text">Irányítószám és város</span>
+            <div class="row">
+              <div class="col-3">
+                <span class="">Irányítószám és város</span>
               </div>
-              <input
-                width="30px"
-                class="form-control"
-                v-model.number="felhasznalo.iranyitoszam"
-              />
-              <input
-                type="text"
-                class="form-control"
-                v-model="felhasznalo.varos"
-              />
+              <div class="col-4">
+                <input
+                  width="30px"
+                  class="mb-2 mr-sm-2"
+                  v-model.number="felhasznalo.iranyitoszam"
+                />
+              </div>
+              <div class="col-4">
+                <input
+                  type="text"
+                  class="mb-2 mr-sm-2"
+                  v-model="felhasznalo.varos"
+                />
+              </div>
             </div>
-            <div class="input-group">
-              <div class="input-group-prepand">
-                <span class="input-group-text">Utca és házszám </span>
+            <div class="row">
+              <div class="col-3">
+                <span class="">Utca és házszám </span>
               </div>
-              <input
-                type="text"
-                class="form-control"
-                v-model="felhasznalo.utcannev"
-              />
-              <input
-                type="text"
-                class="form-control"
-                v-model.number="felhasznalo.hazszam"
-              />
+              <div class="col-4">
+                <input
+                  type="text"
+                  class="mb-2 mr-sm-2"
+                  v-model="felhasznalo.utcannev"
+                />
+              </div>
+              <div class="col-4">
+                <input
+                  type="text"
+                  class="mb-2 mr-sm-2"
+                  v-model.number="felhasznalo.hazszam"
+                />
+              </div>
             </div>
 
             <div class="text-center">
@@ -249,6 +266,7 @@ export default {
 }
 input {
   margin-bottom: 15px;
+  float: right;
 
   width: 100%;
 }
@@ -259,5 +277,8 @@ input {
 }
 .form-control {
   width: 100px;
+}
+.row {
+  margin-bottom: 10px;
 }
 </style>
