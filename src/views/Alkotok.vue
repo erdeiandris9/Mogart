@@ -46,6 +46,10 @@ export default {
   components: {
     Nav,
   },
+  beforeRouteEnter(to, from, next) {
+    alert("Beléptem az alkotókba");
+    next();
+  },
 };
 </script>
 <style>
