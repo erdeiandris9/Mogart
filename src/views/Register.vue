@@ -6,38 +6,46 @@
         <div class="card-header">
           <h2 class="text-monospace">Regisztráció</h2>
         </div>
-        <div class="card-body">
+        <div class="card-body text-center">
           <form class="form-horizontal">
-            <div class>
-              <label class="col-sm-10 control-label text-center">
-                <span class="textformat">Email</span>
-              </label>
-              <div class>
+            <div class="row">
+              <div class="col">
+                <label class="col-4 control-label text-center">
+                  <span class="textformat input-group-text text-center"
+                    >Email</span
+                  >
+                </label>
+              </div>
+              <div class="col-6">
                 <input
                   type="email"
                   class="form-control"
                   placeholder
                   v-model="felhasznalo.email"
+                  style="width: 500px"
                 />
               </div>
             </div>
-            <div class="input-group">
-              <div class="input-group-prepand">
-                <span class="input-group-text col-sm-15"
-                  >Vezeték és keresztnév
-                </span>
+
+            <div class="row">
+              <div class="col">
+                <span class="input-group-text">Vezeték és keresztnév </span>
               </div>
-              <input
-                class="form-control"
-                placeholder
-                v-model="felhasznalo.vezetekNev"
-              />
-              <input
-                class="form-control"
-                type="text"
-                placeholder
-                v-model="felhasznalo.keresztNev"
-              />
+              <div class="col col-lg-1">
+                <input
+                  class="form-control"
+                  placeholder
+                  v-model="felhasznalo.vezetekNev"
+                />
+              </div>
+              <div class="col">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder
+                  v-model="felhasznalo.keresztNev"
+                />
+              </div>
             </div>
 
             <div class>
@@ -95,7 +103,19 @@
                 <input type="password" class="form-control" placeholder />
               </div>
             </div>
-
+            <div class>
+              <label class="col-sm-10 control-label text-center">
+                <span class="textformat">Telefonszám</span>
+              </label>
+              <div class>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder
+                  v-model="felhasznalo.telefonszam"
+                />
+              </div>
+            </div>
             <div class="input-group">
               <div class="input-group-prepand">
                 <span class="input-group-text">Irányítószám és város</span>
@@ -229,12 +249,15 @@ export default {
 }
 input {
   margin-bottom: 15px;
-  margin-right: 10px;
-  margin-left: 10px;
+
+  width: 100%;
 }
 .input-group {
   margin-bottom: 15px;
   width: 100%;
   right: 0%;
+}
+.form-control {
+  width: 100px;
 }
 </style>

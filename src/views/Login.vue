@@ -119,7 +119,6 @@ export default {
         if (this.felhasznalo != null && this.felhasznalo != "") {
           this.$emit("belepve", true);
           this.$emit("felhasznalo", this.felhasznalo);
-          this.$router.push({ name: "Banner" });
         } else {
           alert("Hibás adatok");
         }
